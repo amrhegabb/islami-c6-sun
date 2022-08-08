@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_sun_c6/home/quran/sura_details.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuraNameWidget extends StatelessWidget {
   int index;

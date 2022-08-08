@@ -3,6 +3,7 @@ import 'package:islami_sun_c6/home/hadeth/hadeth_tab.dart';
 import 'package:islami_sun_c6/home/quran/quran_tab.dart';
 import 'package:islami_sun_c6/home/radio/radio_tab.dart';
 import 'package:islami_sun_c6/home/tasbeh/tasbeh_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -39,16 +40,16 @@ class _HomeScreenState extends State<HomeScreen> {
             showSelectedLabels: true,
             items: [
               BottomNavigationBarItem(
-                  label: 'Quran',
+                  label: AppLocalizations.of(context)!.quran_title,
                   icon: ImageIcon(AssetImage('assets/images/ic_quran.png'))),
               BottomNavigationBarItem(
-                  label: 'Hadeth',
+                  label: AppLocalizations.of(context)!.hadeth_title,
                   icon: ImageIcon(AssetImage('assets/images/ic_hadeth.png'))),
               BottomNavigationBarItem(
-                  label: 'Tasbeh',
+                  label: AppLocalizations.of(context)!.sebha_title,
                   icon: ImageIcon(AssetImage('assets/images/ic_sebha.png'))),
               BottomNavigationBarItem(
-                  label: 'Radio',
+                  label: AppLocalizations.of(context)!.radio_title,
                   icon: ImageIcon(AssetImage('assets/images/ic_radio.png')))
             ],
           ),

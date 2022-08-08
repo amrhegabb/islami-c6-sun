@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_sun_c6/home/hadeth/hadeth_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routeName = 'hadeth-details';
