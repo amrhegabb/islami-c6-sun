@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_sun_c6/Providers.dart/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'sura-details';
@@ -15,14 +17,17 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
+    SettingsProvider settingsprovider = Provider.of<SettingsProvider>(context);
     if (suradetails.isEmpty) {
       getsuradetails(args.index);
     }
     return Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  'assets/images/main_background.png',
+                  settingsprovider.currentTheme == ThemeMode.light
+                      ? 'assets/images/main_background.png'
+                      : 'assets/images/bg.png',
                 ),
                 fit: BoxFit.fill)),
         child: Scaffold(
@@ -33,7 +38,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             width: double.infinity,
             margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColorLight,
+              color: Theme.of(context).backgroundColor,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,8 +55,8 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     itemCount: suradetails.length,
                     itemBuilder: ((context, index) => Card(
                           color: index.isEven
-                              ? Theme.of(context).primaryColor
-                              : Theme.of(context).hintColor,
+                              ? Theme.of(context).cardColor
+                              : Theme.of(context).primaryColorDark,
                           elevation: 8,
                           child: RichText(
                             textAlign: TextAlign.right,

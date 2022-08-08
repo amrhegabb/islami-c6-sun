@@ -3,14 +3,19 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static const Color colorGold = Color(0xFFB7935F);
-  static const Color colorYellow = Color(0xFFFACC1D);
+  static const Color ligthprimaryColor = Color(0xFFB7935F);
+  static const Color DarkPrimaryColor = Color(0xFFFACC1D);
   static const Color suraDetailsContainer = Color(0xCCF8F8F8);
+  static const Color NavyColor = Color(0xff141A2E);
 
   static final ThemeData lightTheme = ThemeData(
-      primaryColorLight: suraDetailsContainer,
+      cardColor: Colors.white,
+      bottomSheetTheme:
+          BottomSheetThemeData(backgroundColor: suraDetailsContainer),
+      primaryColorDark: ligthprimaryColor,
+      backgroundColor: suraDetailsContainer,
       hintColor: Colors.white,
-      primaryColor: colorGold,
+      primaryColor: ligthprimaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       textTheme: TextTheme(
           headline1: TextStyle(fontSize: 28, color: Colors.black),
@@ -34,32 +39,47 @@ class MyTheme {
           ),
           unselectedIconTheme: IconThemeData(size: 24)),
       appBarTheme: AppBarTheme(
+          centerTitle: true,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          titleTextStyle: TextStyle(color: Colors.black, fontSize: 28)));
-
+          titleTextStyle: TextStyle(
+              color: Colors.black, fontSize: 28, fontWeight: FontWeight.bold)));
   static final ThemeData DarkTheme = ThemeData(
-      primaryColorLight: suraDetailsContainer,
-      primaryColor: colorGold,
+      bottomSheetTheme: BottomSheetThemeData(backgroundColor: NavyColor),
+      cardColor: Colors.black,
+      backgroundColor: NavyColor.withOpacity(.8),
+      hintColor: Colors.white,
+      primaryColor: DarkPrimaryColor,
+      primaryColorDark: NavyColor,
       scaffoldBackgroundColor: Colors.transparent,
       textTheme: TextTheme(
-        headline1: TextStyle(fontSize: 28, color: Colors.black),
-        headline2: TextStyle(fontSize: 24, color: Colors.black),
-        headline3: TextStyle(fontSize: 22, color: Colors.black),
-        headline4: TextStyle(fontSize: 18, color: Colors.black),
-        headline5: TextStyle(
-            fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
-      ),
+          headline1: TextStyle(fontSize: 28, color: Colors.white),
+          headline2: TextStyle(fontSize: 24, color: Colors.white),
+          headline3: TextStyle(fontSize: 22, color: Colors.white),
+          headline4: TextStyle(fontSize: 18, color: Colors.white),
+          headline5: TextStyle(
+            fontSize: 24,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+          caption: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          )),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: Colors.black,
+          selectedItemColor: DarkPrimaryColor,
+          unselectedItemColor: Colors.white,
           selectedIconTheme: IconThemeData(
-            size: 32,
+            size: 40,
           ),
           unselectedIconTheme: IconThemeData(size: 24)),
       appBarTheme: AppBarTheme(
+          centerTitle: true,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          titleTextStyle: TextStyle(color: Colors.black, fontSize: 28)));
+          titleTextStyle: TextStyle(
+              color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)));
 }
