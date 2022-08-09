@@ -7,6 +7,7 @@ import 'package:islami_sun_c6/my_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -14,9 +15,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  late SettingsProvider settingsProvider;
+
   @override
   Widget build(BuildContext context) {
-    var settingsProvider = Provider.of<SettingsProvider>(context);
+    settingsProvider = Provider.of<SettingsProvider>(context);
+    getvalueFromSharedprerances();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme,
@@ -42,5 +46,12 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: HomeScreen.routeName,
     );
+  }
+
+  Future<void> getvalueFromSharedprerances() async {
+    final pref = await SharedPreferences.getInstance();
+    settingsProvider.changeLanguage(pref.getString("lang") ?? "en");
+    settingsProvider.changeTheme(
+        pref.getBool("Theme") ?? true ? ThemeMode.dark : ThemeMode.light);
   }
 }

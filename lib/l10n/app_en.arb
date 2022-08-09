@@ -8,5 +8,6 @@
     "theme": "Theme",
     "language": "Language",
     "light": "Light",
-    "dark": "Dark"
+    "dark": "Dark",
+    "praises": "Number of praises"
   }

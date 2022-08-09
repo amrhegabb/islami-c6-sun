@@ -70,12 +70,13 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                   child: Stack(
                                     alignment: AlignmentDirectional.center,
                                     children: [
-                                      const ImageIcon(
+                                      ImageIcon(
                                         AssetImage(
                                             "assets/images/versesSperator.png"),
+                                        color: Theme.of(context).primaryColor,
                                       ),
                                       Text(
-                                        "${{index + 1}.toString()}",
+                                        "${index + 1}",
                                         style:
                                             Theme.of(context).textTheme.caption,
                                       ),
