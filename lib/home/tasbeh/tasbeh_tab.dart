@@ -64,6 +64,7 @@ class _TasbehTabState extends State<TasbehTab> {
                 ],
               ),
             ),
+            Spacer(),
             Text(
               AppLocalizations.of(context)!.praises,
               style: Theme.of(context)

@@ -26,10 +26,7 @@ class MyTheme {
           headline3: TextStyle(fontSize: 22, color: Colors.black),
           headline4: TextStyle(fontSize: 18, color: Colors.black),
           headline5: TextStyle(
-              fontSize: 26,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontFamily: "Lateef"),
+              fontSize: 30, fontWeight: FontWeight.bold, fontFamily: "Lateef"),
           caption: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -50,7 +47,7 @@ class MyTheme {
               color: Colors.black, fontSize: 28, fontWeight: FontWeight.bold)));
   static final ThemeData DarkTheme = ThemeData(
       bottomSheetTheme: BottomSheetThemeData(backgroundColor: NavyColor),
-      cardColor: Colors.black,
+      cardColor: Colors.black.withOpacity(.5),
       backgroundColor: NavyColor.withOpacity(.8),
       hoverColor: NavyColor.withOpacity(.8),
       hintColor: Colors.white,
@@ -63,7 +60,7 @@ class MyTheme {
           headline3: TextStyle(fontSize: 22, color: Colors.white),
           headline4: TextStyle(fontSize: 18, color: Colors.white),
           headline5: TextStyle(
-              fontSize: 24,
+              fontSize: 28,
               color: DarkPrimaryColor,
               fontWeight: FontWeight.bold,
               fontFamily: "Lateef"),
@@ -81,7 +78,7 @@ class MyTheme {
           unselectedIconTheme: IconThemeData(size: 24)),
       appBarTheme: AppBarTheme(
           centerTitle: true,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: DarkPrimaryColor),
           backgroundColor: Colors.transparent,
           elevation: 0,
           titleTextStyle: TextStyle(

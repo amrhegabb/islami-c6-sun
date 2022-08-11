@@ -51,13 +51,20 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       .headline5!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
+                Image(
+                    image: AssetImage("assets/images/besmallah.png"),
+                    color: settingsprovider.isDark()
+                        ? MyTheme.DarkPrimaryColor
+                        : Colors.black),
                 Expanded(
-                  child: ListView.builder(
+                  child: ListView.separated(
                     itemCount: suradetails.length,
                     itemBuilder: ((context, index) => Card(
                           color: index.isEven
                               ? Theme.of(context).cardColor
-                              : Theme.of(context).primaryColorDark,
+                              : Theme.of(context)
+                                  .primaryColorDark
+                                  .withOpacity(.7),
                           elevation: 8,
                           child: Directionality(
                             textDirection: TextDirection.rtl,
@@ -70,7 +77,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5!
-                                          .copyWith(fontFamily: "Lateef")),
+                                          .copyWith(fontSize: 35)),
                                   WidgetSpan(
                                     child: Stack(
                                       alignment: AlignmentDirectional.center,
@@ -96,6 +103,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             ),
                           ),
                         )),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        Container(
+                      color: Theme.of(context).primaryColor,
+                      height: 2,
+                      width: double.infinity,
+                    ),
                   ),
                 ),
               ],
