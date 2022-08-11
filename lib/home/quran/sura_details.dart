@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_sun_c6/Providers.dart/settings_provider.dart';
+import 'package:islami_sun_c6/my_theme.dart';
 import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -58,32 +59,40 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                               ? Theme.of(context).cardColor
                               : Theme.of(context).primaryColorDark,
                           elevation: 8,
-                          child: RichText(
-                            textAlign: TextAlign.right,
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                    text: "${suradetails[index]} ",
-                                    style:
-                                        Theme.of(context).textTheme.headline5),
-                                WidgetSpan(
-                                  child: Stack(
-                                    alignment: AlignmentDirectional.center,
-                                    children: [
-                                      ImageIcon(
-                                        AssetImage(
-                                            "assets/images/versesSperator.png"),
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                      Text(
-                                        "${index + 1}",
-                                        style:
-                                            Theme.of(context).textTheme.caption,
-                                      ),
-                                    ],
+                          child: Directionality(
+                            textDirection: TextDirection.rtl,
+                            child: RichText(
+                              textAlign: TextAlign.right,
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                      text: "${suradetails[index]} ",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline5!
+                                          .copyWith(fontFamily: "Lateef")),
+                                  WidgetSpan(
+                                    child: Stack(
+                                      alignment: AlignmentDirectional.center,
+                                      children: [
+                                        ImageIcon(
+                                          const AssetImage(
+                                              "assets/images/versesSperator.png"),
+                                          color: settingsprovider.isDark()
+                                              ? MyTheme.DarkPrimaryColor
+                                              : Colors.black,
+                                        ),
+                                        Text(
+                                          "${index + 1}",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .caption,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         )),

@@ -21,7 +21,7 @@ class _HadethTabState extends State<HadethTab> {
           padding: EdgeInsets.symmetric(vertical: 8),
           child: Text(
             AppLocalizations.of(context)!.hadeth_title,
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headline5,
           ),
           alignment: Alignment.center,
           width: double.infinity,

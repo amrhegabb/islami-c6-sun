@@ -26,12 +26,12 @@ class MyTheme {
           headline3: TextStyle(fontSize: 22, color: Colors.black),
           headline4: TextStyle(fontSize: 18, color: Colors.black),
           headline5: TextStyle(
-            fontSize: 24,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+              fontSize: 26,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Lateef"),
           caption: TextStyle(
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           )),
